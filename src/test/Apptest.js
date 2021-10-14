@@ -39,6 +39,16 @@ export default function App() {
       <Text style={{ color: 'yellow', fontSize: 35 }}>您輸入的手機號碼是：{phone}</Text>
       {getPhone()}
 
+      <TouchableOpacity
+        style={{
+          width: 100, height: 40, backgroundColor: '#00aeef',
+          borderRadius: 20, justifyContent: 'center', margin: 20
+        }}
+        onPress={() => setPhone()}>
+        <Text style={{ color: 'white', textAlign: 'center', fontSize: 20 }}>
+          確認
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -46,7 +56,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'skyblue',
+    backgroundColor: 'black',
     alignItems: 'center',
     color: 'red'
     //backgroundColor: 'skyblue',
@@ -54,12 +64,23 @@ const styles = StyleSheet.create({
     //justifyContent: 'center',
   },
   titleText: {
-    marginTop: 60,
+    marginTop: 50,
     fontSize: 40,
     color: 'red'
   },
   mainText: {
     fontSize: 40,
     color: 'red'
+  },
+  button: {
+    width: 150,
+    height: 200,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flexDirection: 'row',
+    //fontSize: 100
+  },
+  buttonText: {
+    fontSize: 50,
   }
 });
