@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity } from 'react-native';
 
 //版面樣式
-export default function App() {
+export default function App1_1() {
   //初始化
   const [phone, setPhone] = useState('')
   //功能執行
