@@ -13,13 +13,13 @@ export default function App() {
   const getResult = () => {
     if (countA != '' & countB != '') {
       if (countA === '0987654321' & countB === 'test') {
-        return <Text style={{ color: 'yellow', fontSize: 40 }}>輸入成功！</Text>
+        return <Text style={{ color: 'yellow', fontSize: 30 }}>輸入成功！</Text>
       }
       else {
-        return <Text style={{ color: 'red', fontSize: 40 }}>輸入錯誤！</Text>
+        return <Text style={{ color: 'red', fontSize: 30 }}>輸入錯誤！</Text>
       }
     } else {
-      return <Text style={{ color: 'red', fontSize: 40 }}>請輸入帳號密碼！</Text>
+      return <Text style={{ color: 'red', fontSize: 30 }}>請輸入帳號密碼！</Text>
     }
   }
 
@@ -43,8 +43,7 @@ export default function App() {
         style={styles.inputText}
         onChangeText={(text) => setCountB(text)}
         maxLength={10}
-        placeholder='請輸入密碼(英文大小寫有差別)'
-        keyboardType={'numeric'}//限制鍵盤      
+        placeholder='請輸入密碼'
         value={countB}
         underlineColorAndroid='yellow'
         secureTextEntry={true}//隱藏        
@@ -77,7 +76,7 @@ const styles = StyleSheet.create({
     color: 'yellow', fontSize: 35
   },
   inputText: {
-    height: 60, width: 500, borderRadius: 10, backgroundColor: 'gray', color: 'white',
+    height: 60, width: 300, borderRadius: 10, backgroundColor: 'gray', color: 'white',
     fontSize: 30, textAlign: 'center', marginTop: 30
   },
   buttonText: {
