@@ -1,64 +1,43 @@
 import { setStatusBarNetworkActivityIndicatorVisible, StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, } from 'react-native';
-//import App1_1 from './src/screens/App1_1';
-//import App1_2 from './src/screens/App1_2';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
 
+import { Ionicons } from '@expo/vector-icons';
+import App1_1 from './src/screens/App1_1';
+import App1_2 from './src/screens/App1_2';
+import App1_3 from './src/screens/App1_3';
+import HomeScreen from './src/screens/HomeScreen';
+import ProfileScreen from './src/screens/ProfileScreen';
+//初始化
+const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 //版面樣式
 export default function App() {
-  //初始化
-  const [countA, setCountA] = useState('')
-  const [countB, setCountB] = useState('')
   //功能執行
-  const getResult = () => {
-    if (countA != '' & countB != '') {
-      if (countA === '0987654321' & countB === 'test') {
-        return <Text style={{ color: 'yellow', fontSize: 30 }}>輸入成功！</Text>
-      }
-      else {
-        return <Text style={{ color: 'red', fontSize: 30 }}>輸入錯誤！</Text>
-      }
-    } else {
-      return <Text style={{ color: 'red', fontSize: 30 }}>請輸入帳號密碼！</Text>
-    }
-  }
-
   return (
-    <View style={styles.container}>
-      <Text style={styles.titleText1}>第１章　作業 3</Text>
-      <Text style={styles.titleText2}>密碼判斷APP</Text>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
 
-      <TextInput
-        style={styles.inputText}
-        onChangeText={(text) => setCountA(text)}
-        maxLength={10}
-        placeholder='請輸入手機號碼'
-        keyboardType={'numeric'}//限制鍵盤
-        value={countA}
-        underlineColorAndroid='yellow'
-        autoFocus={true}//閃爍
+      </Stack.Navigator>
 
-      />
-      <TextInput
-        style={styles.inputText}
-        onChangeText={(text) => setCountB(text)}
-        maxLength={10}
-        placeholder='請輸入密碼'
-        value={countB}
-        underlineColorAndroid='yellow'
-        secureTextEntry={true}//隱藏        
-      />
 
-      <Text style={styles.mainText}>狀態：{getResult()}</Text>
-      <TouchableOpacity
-        style={styles.buttonLogin}
+      {/* <Tab.Navigator
+          screenOptions={() => ({
+            tabBarIcon: () =>
+              <Ionicons name={'ios-trophy'} size={25} color={'tomato'} />
 
-        onPress={() => getResult()}>
+          })}
+        >
+          <Tab.Screen name="Home" component={App1_1} />
+          <Tab.Screen name="Settings" component={App1_2} />
+        </Tab.Navigator> */}
+    </NavigationContainer>
 
-        <Text style={styles.buttonText}>登入</Text>
-      </TouchableOpacity>
-
-    </View>
   );
 }
 //樣式表

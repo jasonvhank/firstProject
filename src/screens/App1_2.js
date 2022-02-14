@@ -5,7 +5,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 //版面樣式
 export default function App1_2() {
   //初始化
-  const [imgA, setImgA] = useState(require('./src/img/manager.png'))
+  const [imgA, setImgA] = useState(require('../img/manager.png'))
   const [countA, setCountA] = useState(0)
   const [countB, setCountB] = useState(0)
   //功能執行
@@ -26,7 +26,7 @@ export default function App1_2() {
           style={styles.buttonChange}
           onPress={() => {
             setCountA(countA + 1)
-            setImgA(require('./src/img/manager.png'))
+            setImgA(require('../img/manager.png'))
           }}>
           <Text style={styles.buttonText}>使用者A</Text>
         </TouchableOpacity>
@@ -35,7 +35,7 @@ export default function App1_2() {
           style={styles.buttonChange}
           onPress={() => {
             setCountB(countB + 1)
-            setImgA(require('./src/img/support.png'))
+            setImgA(require('../img/support.png'))
           }} >
           <Text style={styles.buttonText}>使用者B</Text>
         </TouchableOpacity>
