@@ -10,7 +10,7 @@ import App1_1 from './src/screens/App1_1';
 import App1_2 from './src/screens/App1_2';
 import App1_3 from './src/screens/App1_3';
 import HomeScreen from './src/screens/HomeScreen';
-import ProfileScreen from './src/screens/ProfileScreen';
+
 //初始化
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -19,9 +19,20 @@ export default function App() {
   //功能執行
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
+      <Stack.Navigator
+        initialRouteName='首頁'
+        screenOptions={{
+          headerStyle: { backgroundColor: 'tomato' },
+          headerBackTitle: '返回',//ios才會出現
+          headerTintColor: 'white'
+        }}
+
+
+      >
+        <Stack.Screen name="Home" component={HomeScreen} options={{ title: '首頁' }} />
+        <Stack.Screen name="App1_1" component={App1_1} options={{ title: '作業1-1' }} />
+        <Stack.Screen name="App1_2" component={App1_2} options={{ title: '作業1-2' }} />
+        <Stack.Screen name="App1_3" component={App1_3} options={{ title: '作業1-3' }} />
 
       </Stack.Navigator>
 

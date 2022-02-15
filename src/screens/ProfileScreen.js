@@ -6,8 +6,8 @@ export default function ProfileScreen(props) {
         <View style={styles.container}>
             <Text style={styles.titleText1}>ProfileScreen</Text>
             <Button
-                title='go to App1_1'
-                on press={() => props.navigation.pop()}
+                title='go to test'
+                onPress={() => props.navigation.pop()}
             />
         </View>
     );

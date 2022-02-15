@@ -17,7 +17,7 @@ export default function App1_2() {
       <Text style={styles.titleText1}>第１章　作業 2</Text>
       <Text style={styles.titleText2}>Button元件應用</Text>
       <Image
-        style={{ width: 300, height: 400 }}
+        style={{ width: 300, height: 300 }}
         source={imgA}
       />
 
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     flex: 1, backgroundColor: 'skyblue', alignItems: 'center', color: 'red'
   },
   titleText1: {
-    marginTop: 60, fontSize: 40, color: 'red'
+    marginTop: 10, fontSize: 40, color: 'red'
   },
   titleText2: {
     fontSize: 40, color: 'red'

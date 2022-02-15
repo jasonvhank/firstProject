@@ -4,12 +4,21 @@ import { StyleSheet, Text, View, Button, } from 'react-native';
 export default function HomeScreen(props) {
     return (
         <View style={styles.container}>
-            <Text style={styles.titleText1}>HomeScreen</Text>
+            <Text style={styles.titleText1}>React Native</Text>
             <Button
-                title='go to App1_1'
-                on press={() => props.navigation.push('ProfileScreen')}
+                title='作業1-1'
+                onPress={() => props.navigation.push('App1_1')}//onPress出錯一次不要再犯傻123
+            />
+            <Button
+                title='作業1-2'
+                onPress={() => props.navigation.push('App1_2')}
+            />
+            <Button
+                title='作業1-3'
+                onPress={() => props.navigation.push('App1_3')}
             />
         </View>
+
     );
 }
 
@@ -20,7 +29,7 @@ const styles = StyleSheet.create({
         flex: 1, backgroundColor: 'skyblue', alignItems: 'center', color: 'red'
     },
     titleText1: {
-        marginTop: 60, fontSize: 40, color: 'red'
+        marginTop: 10, fontSize: 40, color: 'red'
     },
     titleText2: {
         fontSize: 40, color: 'red'

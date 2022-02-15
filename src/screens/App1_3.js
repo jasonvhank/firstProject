@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     flex: 1, backgroundColor: 'skyblue', alignItems: 'center', color: 'red'
   },
   titleText1: {
-    marginTop: 60, fontSize: 40, color: 'red'
+    marginTop: 10, fontSize: 40, color: 'red'
   },
   titleText2: {
     fontSize: 40, color: 'red'
